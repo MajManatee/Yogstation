@@ -14,7 +14,8 @@ SUBSYSTEM_DEF(economy)
 										ACCOUNT_MED = ACCOUNT_MED_NAME,
 										ACCOUNT_SRV = ACCOUNT_SRV_NAME,
 										ACCOUNT_CAR = ACCOUNT_CAR_NAME,
-										ACCOUNT_SEC = ACCOUNT_SEC_NAME)
+										ACCOUNT_SEC = ACCOUNT_SEC_NAME,
+										ACCOUNT_CDT = ACCOUNT_CDT_NAME)
 	var/list/generated_accounts = list()
 	var/full_ancap = FALSE // Enables extra money charges for things that normally would be free, such as sleepers/cryo/cloning.
 							//Take care when enabling, as players will NOT respond well if the economy is set up for low cash flows.
@@ -72,6 +73,7 @@ SUBSYSTEM_DEF(economy)
 		ACCOUNT_SRV = 0,
 		ACCOUNT_CAR = 0,
 		ACCOUNT_SEC = 0,
+		ACCOUNT_CDT = 0,
 	)
 
 /datum/controller/subsystem/economy/Initialize(timeofday)
@@ -85,6 +87,8 @@ SUBSYSTEM_DEF(economy)
 			if(ACCOUNT_CAR)
 				new /datum/bank_account/department(A, STARTING_CAR_BUDGET)
 				continue
+			if(ACCOUNT_CDT)
+				new /datum/bank_account/department(A, STARTING_CDT_BUDGET)
 			else
 				new /datum/bank_account/department(A, budget_starting_amt)
 	return SS_INIT_SUCCESS
@@ -130,6 +134,7 @@ SUBSYSTEM_DEF(economy)
 		ACCOUNT_SRV = 0,
 		ACCOUNT_CAR = 0,
 		ACCOUNT_SEC = 0,
+		ACCOUNT_CDT = 0,
 	)
 	for(var/datum/job/J in SSjob.occupations)
 		if(!(J.paycheck && J.paycheck_department))

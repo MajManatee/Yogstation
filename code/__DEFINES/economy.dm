@@ -17,6 +17,7 @@
 
 #define STARTING_SEC_BUDGET 14000
 #define STARTING_CAR_BUDGET 5000
+#define STARTING_CDT_BUDGET 100
 
 #define MAX_GRANT_CIV 2500
 #define MAX_GRANT_ENG 3000
@@ -37,6 +38,9 @@
 #define ACCOUNT_CAR_NAME "Cargo Budget"
 #define ACCOUNT_SEC "SEC"
 #define ACCOUNT_SEC_NAME "Defense Budget"
+#define ACCOUNT_CDT "CDT"
+#define ACCOUNT_CDT_NAME "Store Credit"
+
 
 #define MEGAFAUNA_CASH_SCALE 2
 

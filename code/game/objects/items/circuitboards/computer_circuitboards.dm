@@ -467,6 +467,10 @@
 
 //Service
 
+/obj/item/circuitboard/computer/servicebounty
+	name = "Nanotrasen Service Bounty Console (Computer Board)"
+	build_path - /obj/machinery/computer/servicebounty
+
 //Supply
 
 /obj/item/circuitboard/computer/bounty
