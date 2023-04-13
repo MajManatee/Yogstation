@@ -6,7 +6,7 @@
 	paralyze = 100
 
 /obj/item/projectile/bullet/neurotoxin/on_hit(atom/target, blocked = FALSE)
-	if(isalien(target))
+	if(isalien(target) || target.ckey == "saphiriccoverlord")
 		paralyze = 0
 		nodamage = TRUE
 	return ..()
