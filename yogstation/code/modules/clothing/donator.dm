@@ -191,6 +191,7 @@
 
 /obj/item/storage/box/boxta/PopulateContents() 
 	. = ..()
+	new /obj/item/bodypart/l_arm/robot/buster(src)
 	new /obj/item/clothing/neck/falcon(src)
 	new /obj/item/clothing/head/fedora/gtrim_fedora(src)
 
